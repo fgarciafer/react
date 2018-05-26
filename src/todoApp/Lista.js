@@ -15,16 +15,16 @@ class Lista extends Component{
         let listaDiv = [];
 
         const agregarDiv = VarListaData.tareas.forEach((value,index)=>{
-            listaDiv.push(<li key={index} onClick={function(){VarListaData.eliminarTarea(index)}}>{value}</li>)
+            listaDiv.push(<li className='list-group-item' key={index} onClick={function(){VarListaData.eliminarTarea(index)}}>{value}</li>)
         });
 
         return (
-            <div>
+            <div className='container'>
                 <h2>Lista</h2>
                 <input onKeyPress={this.enviarTarea.bind(this)}/>
-                <div>
-                    <div>
-                        <ul>
+                <div className='row'>
+                    <div className='col-xs-12'>
+                        <ul className='list-group'>
                             {listaDiv}
                         </ul>
                     </div>
